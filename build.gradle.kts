@@ -25,19 +25,21 @@ dependencies {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+        vendor.set(JvmVendorSpec.any())
+    }
 }
 
 tasks {
     withType<JavaCompile> {
-        sourceCompatibility = "17"
-        targetCompatibility = "17"
+        sourceCompatibility = "21"
+        targetCompatibility = "21"
     }
     patchPluginXml {
         sinceBuild.set("233")
         untilBuild.set("")
     }
-    // Skip searchable options — not needed for basic install
     buildSearchableOptions {
         enabled = false
     }
