@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("org.jetbrains.kotlin.jvm") version "1.9.22"
-    id("org.jetbrains.intellij") version "1.17.2"
+    id("org.jetbrains.intellij") version "1.17.4"
 }
 
 group = "com.cs50"
@@ -19,7 +19,7 @@ dependencies {
 
 intellij {
     version.set("2023.3.4")
-    type.set("IC")  // IntelliJ Community (works with PyCharm too)
+    type.set("IC")
     downloadSources.set(false)
     updateSinceUntilBuild.set(false)
 }
