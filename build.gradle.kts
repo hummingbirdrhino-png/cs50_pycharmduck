@@ -25,10 +25,7 @@ dependencies {
 }
 
 kotlin {
-    jvmToolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
-        vendor.set(JvmVendorSpec.any())
-    }
+    jvmToolchain(21)
 }
 
 tasks {
