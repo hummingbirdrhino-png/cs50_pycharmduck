@@ -1,0 +1,35 @@
+<idea-plugin>
+    <id>com.cs50.ddb50</id>
+    <name>CS50 Duck Debugger</name>
+    <vendor email="cs50@harvard.edu" url="https://cs50.harvard.edu">CS50</vendor>
+    <description>CS50's rubber duck debugger for PyCharm. Quack!</description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+            id="CS50 Duck"
+            anchor="right"
+            factoryClass="com.cs50.ddb50.DuckToolWindowFactory"
+        />
+        <applicationService serviceImplementation="com.cs50.ddb50.DuckSettings"/>
+        <applicationConfigurable
+            parentId="tools"
+            instance="com.cs50.ddb50.DuckSettingsConfigurable"
+            id="com.cs50.ddb50.settings"
+            displayName="CS50 Duck Debugger"
+        />
+    </extensions>
+
+    <actions>
+        <action id="ddb50.clearHistory"
+                class="com.cs50.ddb50.ClearHistoryAction"
+                text="Clear Chat History"
+                icon="AllIcons.Actions.GC"/>
+        <action id="ddb50.downloadHistory"
+                class="com.cs50.ddb50.DownloadHistoryAction"
+                text="Download Chat History"
+                icon="AllIcons.Actions.Download"/>
+    </actions>
+</idea-plugin>
