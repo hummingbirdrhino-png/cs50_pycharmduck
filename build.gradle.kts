@@ -24,16 +24,21 @@ dependencies {
     }
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 tasks {
     withType<JavaCompile> {
         sourceCompatibility = "17"
         targetCompatibility = "17"
     }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
-    }
     patchPluginXml {
         sinceBuild.set("233")
         untilBuild.set("")
+    }
+    // Skip searchable options — not needed for basic install
+    buildSearchableOptions {
+        enabled = false
     }
 }
