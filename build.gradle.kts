@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.22"
+    id("org.jetbrains.kotlin.jvm") version "2.0.21"
     id("org.jetbrains.intellij.platform") version "2.3.0"
 }
 
@@ -21,7 +21,6 @@ dependencies {
     intellijPlatform {
         intellijIdeaCommunity("2023.3.4")
         bundledPlugin("com.intellij.java")
-        instrumentationTools()
     }
 }
 
